@@ -44,8 +44,10 @@
     </section>
     <section class="container section proof" id="proof"><h2 class="small-heading">Trusted by</h2><div class="client-grid" id="client-grid"></div><p class="muted" id="client-note">Client logos will be added here.</p><div class="grid testimonials" id="testimonial-grid"></div></section>
     <section class="container section enquiry" id="contact">
-      <h2>Tell us about your project</h2>
+      <h2>Have a project in mind?</h2>
       <p class="intro">Choose a service and share your ideas. We’ll take it from there.</p>
+      <details class="enquiry-disclosure" id="project-enquiry">
+      <summary class="button">Tell us about your project <span class="disclosure-icon" aria-hidden="true"></span></summary>
       <form id="project-form" class="enquiry-panel">
         <div class="form-grid">
           <div class="field"><label for="client-name">Client name <span aria-hidden="true">*</span></label><input id="client-name" name="clientName" type="text" autocomplete="name" required maxlength="120"></div>
@@ -62,6 +64,7 @@
         <p id="form-status" class="form-status" role="status" aria-live="polite"></p>
         <div id="email-fallback" hidden><p class="form-help">If your email app did not open, copy your enquiry and paste it into a new email to <span id="form-recipient"></span>.</p><label for="enquiry-copy">Your enquiry</label><textarea id="enquiry-copy" rows="8" readonly></textarea><button type="button" class="button outline" id="copy-enquiry">Copy enquiry</button></div>
       </form>
+      </details>
     </section>
   </main>
   <footer class="container footer"><div><strong>designOgraphic</strong><p>Creative work with purpose.</p></div><div class="footer-links" id="social-links"><a href="privacy.html">Privacy policy</a></div><p class="copyright">© <span id="year"></span> designOgraphic</p></footer>
