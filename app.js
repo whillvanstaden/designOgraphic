@@ -12,7 +12,6 @@ services.forEach(([name,description,icon],i)=>{
   const card=element('article','card'); const top=element('div','service-top',String(i+1).padStart(2,'0'));
   const svg=document.createElementNS('http://www.w3.org/2000/svg','svg'); svg.setAttribute('viewBox','0 0 24 24');svg.setAttribute('class','service-icon');svg.setAttribute('aria-hidden','true');svg.innerHTML=icon;
   top.append(svg);card.append(top,element('h3','',name),element('p','',description));document.querySelector('#service-grid').append(card);
-  const row=element('div','price-row');row.append(element('strong','',name),element('span','',content.prices[name] ? `From ${content.prices[name]}`:'On request'));document.querySelector('#price-grid').append(row);
 });
 content.projects.forEach(project=>{
   const card=element('article','project');card.style.setProperty('--cover',project.color);
@@ -34,7 +33,25 @@ else{for(let i=0;i<6;i++)clients.append(element('div','client-placeholder','Clie
 const testimonials=document.querySelector('#testimonial-grid');
 if(content.testimonials.length){content.testimonials.forEach(t=>{const card=element('article','card');card.append(element('blockquote','',`“${t.quote}”`),element('cite','',t.credit));testimonials.append(card);});}
 else{for(let i=0;i<3;i++){const card=element('article','card');card.append(element('span','preview-label','TESTIMONIAL SPACE'),element('blockquote','','Your approved client testimonial will appear here.'),element('cite','','Client name · Company'));testimonials.append(card);}}
-const email=document.querySelector('#email-link');email.textContent=content.email;email.href=`mailto:${content.email}`;document.querySelector('.contact-note').hidden=!content.emailIsPreview;
+document.querySelector('#form-preview').hidden=!content.emailIsPreview;
+document.querySelector('#form-recipient').textContent=content.email;
+const dateInput=document.querySelector('#project-date');
+function setMinimumDate(){const now=new Date();dateInput.min=`${now.getFullYear()}-${String(now.getMonth()+1).padStart(2,'0')}-${String(now.getDate()).padStart(2,'0')}`;}
+setMinimumDate();dateInput.addEventListener('focus',setMinimumDate);
+document.querySelector('#project-form').addEventListener('submit',event=>{
+  event.preventDefault();setMinimumDate();if(!event.currentTarget.reportValidity())return;
+  const data=new FormData(event.currentTarget);
+  const body=`Project enquiry — designOgraphic\n\nClient name: ${data.get('clientName').trim()}\nContact number: ${data.get('phone').trim()}\nEmail: ${data.get('email').trim()}\nService: ${data.get('service')}\nRequested completion date: ${data.get('deadline')}\n\nProject details:\n${data.get('details').trim()}`;
+  document.querySelector('#enquiry-copy').value=body;
+  document.querySelector('#email-fallback').hidden=false;
+  document.querySelector('#form-status').textContent='Your enquiry is prepared. It has not been sent. Review and send it in your email app.';
+  window.location.href=`mailto:${content.email}?subject=${encodeURIComponent('Project enquiry: '+data.get('service'))}&body=${encodeURIComponent(body)}`;
+});
+document.querySelector('#copy-enquiry').addEventListener('click',async()=>{
+  const text=document.querySelector('#enquiry-copy');
+  try{await navigator.clipboard.writeText(text.value);document.querySelector('#form-status').textContent='Enquiry copied. Paste it into your email app.';}
+  catch{ text.focus();text.select();document.querySelector('#form-status').textContent='Select and copy the enquiry text, then paste it into your email app.'; }
+});
 content.socials.forEach(s=>{if(!/^https:\/\//i.test(s.url))return;const a=element('a','',s.label);a.href=s.url;a.target='_blank';a.rel='noopener noreferrer';document.querySelector('#social-links').append(a);});
 document.querySelector('#year').textContent=new Date().getFullYear();
 const menu=document.querySelector('.menu-toggle');const nav=document.querySelector('#navigation');

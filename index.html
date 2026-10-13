@@ -6,7 +6,7 @@
   <meta name="description" content="designOgraphic — branding, web design, graphic design, print, video and social media.">
   <meta name="theme-color" content="#ff7529">
   <title>designOgraphic | Creative studio</title>
-  <link rel="icon" href="assets/logo.png">
+  <link rel="icon" href="assets/logo-transparent.svg">
   <link rel="stylesheet" href="styles.css">
   <script src="content.js" defer></script>
   <script src="app.js" defer></script>
@@ -14,9 +14,9 @@
 <body>
   <a class="skip" href="#main">Skip to content</a>
   <header class="container header">
-    <a class="brand" href="#" aria-label="designOgraphic home"><img src="assets/logo.png" alt="designOgraphic" width="1254" height="1254"></a>
+    <a class="brand" href="#" aria-label="designOgraphic home"><img src="assets/logo-transparent.svg" alt="designOgraphic"></a>
     <button class="menu-toggle" aria-expanded="false" aria-controls="navigation">Menu <span aria-hidden="true">☰</span></button>
-    <nav id="navigation" aria-label="Main navigation"><a href="#services">Services</a><a href="#work">Work</a><a href="#process">Process</a><a href="#pricing">Pricing</a><a href="#about">About</a></nav>
+    <nav id="navigation" aria-label="Main navigation"><a href="#services">Services</a><a href="#work">Work</a><a href="#process">Process</a><a href="#contact">Start a project</a><a href="#about">About</a></nav>
     <a class="button header-contact" href="#contact">Get in touch</a>
   </header>
   <main id="main">
@@ -30,12 +30,30 @@
     <section class="container section" id="services"><h2>What we do</h2><div class="grid" id="service-grid"></div></section>
     <section class="work section" id="work"><div class="container"><h2>Selected work</h2><div class="grid" id="work-grid"></div><p class="muted">Project previews — ready for your portfolio images.</p></div></section>
     <section class="container section" id="showreel"><h2>Showreel</h2><div class="reel-frame" id="reel-frame"><span class="play-symbol" aria-hidden="true">▶</span><p>Your work in motion</p><span>Showreel coming soon</span></div></section>
-    <section class="container section" id="process"><h2>How we work</h2><div class="grid process-grid"><article class="card"><h3>1. Discover</h3><p>We learn your business, audience and goals.</p></article><article class="card"><h3>2. Create</h3><p>We turn insights into concepts and design.</p></article><article class="card"><h3>3. Launch</h3><p>We deliver, polish and go live.</p></article><article class="card"><h3>4. Grow</h3><p>We support you as your brand evolves.</p></article></div></section>
+    <section class="container section" id="process"><h2>How we work</h2><ol class="process-panel"><li><h3>Discover</h3><p>We learn your business, audience and goals.</p></li><li><h3>Create</h3><p>We turn insights into concepts and design.</p></li><li><h3>Launch</h3><p>We deliver, polish and go live.</p></li><li><h3>Grow</h3><p>We support you as your brand evolves.</p></li></ol></section>
     <section class="container section about" id="about"><div class="founder" id="founder"><span class="monogram" aria-hidden="true">d<span>o</span></span><span class="asset-note">Studio photo coming soon</span></div><div><h2>A small studio, big on detail</h2><p id="about-copy">designOgraphic is a creative studio helping businesses look sharper, sound clearer and stand out.</p><p>You work directly with the people doing the work.</p></div></section>
     <section class="container section proof" id="proof"><h2 class="small-heading">Trusted by</h2><div class="client-grid" id="client-grid"></div><p class="muted" id="client-note">Client logos will be added here.</p><div class="grid testimonials" id="testimonial-grid"></div></section>
-    <section class="container section" id="pricing"><h2>Clear prices, no surprises</h2><p class="intro">Choose a service or ask for a custom quote. We’ll help you find the right fit for your project.</p><div class="pricing-panel"><div class="grid" id="price-grid"></div><a class="button" href="#contact">Request a price list</a></div></section>
-    <section class="contact section" id="contact"><div class="container"><h2>Have a project in mind? Let's talk.</h2><p>Tell us what you’re building and we’ll show you how we can help.</p><a class="button white" id="email-link" href="mailto:info@designOgraphic.co.za">info@designOgraphic.co.za</a><p class="contact-note">Preview contact address — to be confirmed before launch.</p></div></section>
+    <section class="container section enquiry" id="contact">
+      <h2>Tell us about your project</h2>
+      <p class="intro">Choose a service and share your ideas. We’ll take it from there.</p>
+      <form id="project-form" class="enquiry-panel">
+        <div class="form-grid">
+          <div class="field"><label for="client-name">Client name <span aria-hidden="true">*</span></label><input id="client-name" name="clientName" type="text" autocomplete="name" required maxlength="120"></div>
+          <div class="field"><label for="client-phone">Contact number <span aria-hidden="true">*</span></label><input id="client-phone" name="phone" type="tel" autocomplete="tel" required maxlength="40"></div>
+          <div class="field"><label for="client-email">Email address <span aria-hidden="true">*</span></label><input id="client-email" name="email" type="email" autocomplete="email" required maxlength="254"></div>
+          <div class="field"><label for="project-service">Service <span aria-hidden="true">*</span></label><select id="project-service" name="service" required><option value="" disabled selected>Select a service</option><option>Branding &amp; Logo</option><option>Web Design</option><option>Graphic Design</option><option>Print Collateral</option><option>Video &amp; Motion</option><option>Social Media</option></select></div>
+          <div class="field"><label for="project-date">Requested completion date <span aria-hidden="true">*</span></label><input id="project-date" name="deadline" type="date" required aria-describedby="date-hint"><small id="date-hint">We’ll confirm availability before agreeing to a deadline.</small></div>
+          <div class="field field-full"><label for="project-details">Tell us more about your project <span aria-hidden="true">*</span></label><textarea id="project-details" name="details" rows="5" maxlength="2500" placeholder="Your ideas, goals, deliverables and anything else we should know…" required></textarea></div>
+        </div>
+        <p class="form-privacy">We use your details to respond to your enquiry. Read our <a href="privacy.html">privacy policy</a>. Please leave out sensitive personal information.</p>
+        <p class="form-preview" id="form-preview">Preview: the receiving email address is a dummy and has not been confirmed.</p>
+        <button class="button" type="submit">Prepare enquiry email</button>
+        <p class="form-help">This opens your email app with the details filled in. Review the email and send it there.</p>
+        <p id="form-status" class="form-status" role="status" aria-live="polite"></p>
+        <div id="email-fallback" hidden><p class="form-help">If your email app did not open, copy your enquiry and paste it into a new email to <span id="form-recipient"></span>.</p><label for="enquiry-copy">Your enquiry</label><textarea id="enquiry-copy" rows="8" readonly></textarea><button type="button" class="button outline" id="copy-enquiry">Copy enquiry</button></div>
+      </form>
+    </section>
   </main>
-  <footer class="container footer"><div><strong>designOgraphic</strong><p>Creative work with purpose.</p></div><div class="footer-links" id="social-links"></div><p class="copyright">© <span id="year"></span> designOgraphic</p></footer>
+  <footer class="container footer"><div><strong>designOgraphic</strong><p>Creative work with purpose.</p></div><div class="footer-links" id="social-links"><a href="privacy.html">Privacy policy</a></div><p class="copyright">© <span id="year"></span> designOgraphic</p></footer>
 </body>
 </html>

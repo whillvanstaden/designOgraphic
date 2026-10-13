@@ -16,7 +16,6 @@ window.siteContent = {
     {name:'Motion study', category:'Video & motion', image:'', color:'#a5c6e9'},
     {name:'Social collection', category:'Social media', image:'', color:'#eba5b7'}
   ], // Portfolio images: 4:3, ideally 1600 x 1200. Preview titles are illustrative.
-  prices: {}, // e.g. 'Web Design': 'R 5,000'. No prices are invented.
   clients: [], // e.g. {name:'Client name', image:'assets/client.svg'}
   testimonials: [], // e.g. {quote:'Approved client quote', credit:'Name, Company'}
   socials: [] // e.g. {label:'Instagram', url:'https://www.instagram.com/your-account/'}
