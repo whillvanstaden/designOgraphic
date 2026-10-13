@@ -8,16 +8,12 @@ const services = [
   ['Social Media','Styled channels and scroll-stopping content, consistent everywhere.','<rect x="5" y="2" width="14" height="20" rx="3"/><path d="M9 6h6M10 18h4"/><circle cx="12" cy="12" r="3"/>']
 ];
 function element(tag, className, text) { const el=document.createElement(tag); if(className)el.className=className; if(text!==undefined)el.textContent=text; return el; }
-services.forEach(([name,description,icon],i)=>{
-  const card=element('article','card'); const top=element('div','service-top',String(i+1).padStart(2,'0'));
-  const svg=document.createElementNS('http://www.w3.org/2000/svg','svg'); svg.setAttribute('viewBox','0 0 24 24');svg.setAttribute('class','service-icon');svg.setAttribute('aria-hidden','true');svg.innerHTML=icon;
-  top.append(svg);card.append(top,element('h3','',name),element('p','',description));document.querySelector('#service-grid').append(card);
-});
-content.projects.forEach(project=>{
+services.forEach(([name,description],i)=>{
+  const project=content.projects[i];
   const card=element('article','project');card.style.setProperty('--cover',project.color);
-  if(project.image){const img=element('img');img.src=project.image;img.alt=project.name;img.loading='lazy';card.append(img);card.classList.add('has-image');}
-  else {card.append(element('div','shape'),element('span','sample','Portfolio preview'));}
-  card.append(element('h3','',project.name),element('p','',project.category));document.querySelector('#work-grid').append(card);
+  if(project.image){const img=element('img');img.src=project.image;img.alt=name+' project preview';img.loading='lazy';card.append(img);card.classList.add('has-image');}
+  else {card.append(element('div','shape'));}
+  card.append(element('span','project-number',String(i+1).padStart(2,'0')),element('span','sample','Portfolio preview'),element('h3','',name),element('p','project-description',description));document.querySelector('#work-grid').append(card);
 });
 if(content.city)document.querySelector('#city').textContent=` · ${content.city}`;
 if(content.heroImage){
