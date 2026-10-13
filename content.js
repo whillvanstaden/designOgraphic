@@ -16,7 +16,14 @@ window.siteContent = {
     {name:'Motion study', category:'Video & motion', image:'', color:'#a5c6e9'},
     {name:'Social collection', category:'Social media', image:'', color:'#eba5b7'}
   ], // Portfolio images: 4:3, ideally 1600 x 1200. Preview titles are illustrative.
-  clients: [], // e.g. {name:'Client name', image:'assets/client.svg'}
+  clients: [
+    {name:'The Rainbow Foundation for Amputees', image:'assets/clients/client-1.svg'},
+    {name:'RNSC Construct', image:'assets/clients/client-2.svg'},
+    {name:'Jozi Cozi Coffee Shop', image:'assets/clients/client-3.svg'},
+    {name:'PicoGro', image:'assets/clients/client-4.svg'},
+    {name:'Livestock Capital Investments', image:'assets/clients/client-5.svg'},
+    {name:'BrouVic', image:'assets/clients/client-6.svg'}
+  ],
   testimonials: [], // e.g. {quote:'Approved client quote', credit:'Name, Company'}
   socials: [] // e.g. {label:'Instagram', url:'https://www.instagram.com/your-account/'}
 };

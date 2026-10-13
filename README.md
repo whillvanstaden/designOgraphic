@@ -14,6 +14,7 @@ Open `index.html` in a browser, or serve this folder with `python -m http.server
 - `assets/logo.png`: the supplied original logo.
 - `assets/logo-transparent.svg`: original logo with an SVG transparency filter that removes its white background without regenerating its lettering. Image-tool candidates were discarded because they changed the edges.
 - `privacy.html`: privacy policy describing the current static site and email-draft form.
+- `assets/clients/`: six original client PNGs supplied through Drive and SVG display wrappers that fit their visible artwork without changing the original image data. Dark tiles keep the supplied white logos visible.
 
 The PDF page boundaries are removed to make a continuous website. The wide hero frame follows the PDF's displayed proportions and uses a 4:5 phone frame. The supplied logo establishes orange and dark ink colours. The owner's October 13 revisions combine the four process steps into one panel, replace pricing with a project enquiry form, remove the orange contact section and add a privacy page.
 
