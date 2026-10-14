@@ -11,9 +11,12 @@ function element(tag, className, text) { const el=document.createElement(tag); i
 services.forEach(([name,description],i)=>{
   const project=content.projects[i];
   const card=element('article','project');card.style.setProperty('--cover',project.color);
-  if(project.image){const img=element('img');img.src=project.image;img.alt=name+' project preview';img.loading='lazy';card.append(img);card.classList.add('has-image');}
-  else {card.append(element('div','shape'));}
-  card.append(element('span','project-number',String(i+1).padStart(2,'0')),element('span','sample','Portfolio preview'),element('h3','',name),element('p','project-description',description));document.querySelector('#work-grid').append(card);
+  const visual=element('div','project-visual');
+  if(project.image){const img=element('img');img.src=project.image;img.alt=name+' project preview';img.loading='lazy';img.width=1600;img.height=1200;visual.append(img);card.classList.add('has-image');}
+  else {visual.append(element('div','shape'));}
+  visual.append(element('span','project-number',String(i+1).padStart(2,'0')));
+  const copy=element('div','project-copy');copy.append(element('span','sample','Portfolio preview'),element('h3','',name),element('p','project-description',description));
+  card.append(visual,copy);document.querySelector('#work-grid').append(card);
 });
 if(content.city)document.querySelector('#city').textContent=` · ${content.city}`;
 if(content.heroImage){

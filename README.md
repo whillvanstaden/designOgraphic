@@ -12,6 +12,7 @@ Open `index.html` in a browser, or serve this folder with `python -m http.server
 - `index.html`: page copy and section order.
 - `styles.css`: sizes, spacing, colours and mobile breakpoints.
 - `assets/logo.png`: the supplied original logo.
+- `assets/services/`: the five supplied service thumbnails, matched to service numbers 02–06 and displayed in full above each card's copy. Branding retains its placeholder.
 - `assets/logo-transparent.svg`: original logo with an SVG transparency filter that removes its white background without regenerating its lettering. Image-tool candidates were discarded because they changed the edges.
 - `privacy.html`: privacy policy describing the current static site and email-draft form.
 - `assets/clients/`: six original client PNGs supplied through Drive and SVG display wrappers that fit their visible artwork without changing the original image data. Six light orange tiles of different widths and heights fit into one rectangular mosaic, including a tall right-hand tile and a wide bottom tile. The mosaic arrangement is preserved on phones.
