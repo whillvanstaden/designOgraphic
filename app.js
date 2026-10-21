@@ -27,7 +27,7 @@ if(content.heroImage){
 if(content.founderImage){const frame=document.querySelector('#founder');const img=element('img');img.src=content.founderImage;img.alt='The designOgraphic studio';img.loading='lazy';frame.replaceChildren(img);}
 if(content.showreelVideo){const video=element('video');video.controls=true;video.preload='metadata';video.src=content.showreelVideo;if(content.showreelPoster)video.poster=content.showreelPoster;video.setAttribute('aria-label','designOgraphic showreel');document.querySelector('#reel-frame').replaceChildren(video);}
 const clients=document.querySelector('#client-grid');
-if(content.clientGridImage){clients.className='client-logo-collection';const img=element('img');img.src=content.clientGridImage;img.alt='Client logos trusted by designOgraphic';img.loading='lazy';img.width=1537;img.height=864;clients.append(img);document.querySelector('#client-note').hidden=true;}
+if(content.clientGridImage){clients.className='client-logo-collection';const img=element('img');img.src=content.clientGridImage;img.alt='Client logos trusted by designOgraphic';img.loading='lazy';img.width=1672;img.height=941;clients.append(img);document.querySelector('#client-note').hidden=true;}
 else if(content.clients.length){content.clients.forEach(client=>{const tile=element('figure','client-tile');const img=element('img');img.src=client.image;img.alt=client.name;img.loading='lazy';img.width=160;img.height=110;tile.append(img,element('figcaption','',client.name));clients.append(tile);});document.querySelector('#client-note').hidden=true;}
 else{for(let i=0;i<6;i++)clients.append(element('div','client-placeholder','Client logo space'));}
 const testimonials=document.querySelector('#testimonial-grid');
