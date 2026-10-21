@@ -9,10 +9,10 @@ window.siteContent = {
   showreelVideo: '', // MP4, ideally under 20 MB
   showreelPoster: '', // 16:9
   projects: [
-    {name:'Brand identity', category:'Branding', image:'', color:'#f3af82'},
+    {name:'Brand identity', category:'Branding', image:'assets/services/service-01.png', color:'#f3af82'},
     {name:'Web Design', category:'Web design', image:'assets/services/service-02.png', color:'#9ecfc3'},
-    {name:'Graphic Design', category:'Graphic design', image:'assets/services/service-03.png', color:'#c7b5eb'},
-    {name:'Print Collateral', category:'Print collateral', image:'assets/services/service-04.png', color:'#f1e291'},
+    {name:'Graphic Design', category:'Graphic design', image:'assets/services/service-04.png', color:'#c7b5eb'},
+    {name:'Print Collateral', category:'Print collateral', image:'assets/services/service-03.png', color:'#f1e291'},
     {name:'Video & Motion', category:'Video & motion', image:'assets/services/service-05.png', color:'#a5c6e9'},
     {name:'Social Media', category:'Social media', image:'assets/services/service-06.png', color:'#eba5b7'}
   ], // Portfolio images: 4:3, ideally 1600 x 1200. Preview titles are illustrative.
