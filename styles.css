@@ -24,3 +24,5 @@
 @media(max-width:760px){.proof.section{padding:48px 0}.trusted-panel{width:calc(100% - 40px);padding:18px}.trusted-panel .small-heading{font-size:22px}}
 
 @media(min-width:761px) and (max-width:1000px){.trusted-panel{width:calc(100% - 64px)}}
+
+.project:first-child .project-visual{padding:7% 9%;background:#fae5d6;border-radius:32px}.project:first-child .project-visual img{position:static;display:block;width:100%;height:100%;object-fit:contain;border-radius:24px}
