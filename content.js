@@ -16,7 +16,7 @@ window.siteContent = {
     {name:'Video & Motion', category:'Video & motion', image:'assets/services/service-05.png', color:'#a5c6e9'},
     {name:'Social Media', category:'Social media', image:'assets/services/service-06.png', color:'#eba5b7'}
   ], // Portfolio images: 4:3, ideally 1600 x 1200. Preview titles are illustrative.
-  clientGridImage: 'assets/clients/monochrome-logo-collection.png',
+  clientGridImage: 'assets/clients/trusted-by.png',
   clients: [
     {name:'The Rainbow Foundation for Amputees', image:'assets/clients/client-1.svg'},
     {name:'RNSC Construct', image:'assets/clients/client-2.svg'},
