@@ -26,3 +26,13 @@
 @media(min-width:761px) and (max-width:1000px){.trusted-panel{width:calc(100% - 64px)}}
 
 .project:first-child .project-visual{padding:7% 9%;background:#fae5d6;border-radius:32px}.project:first-child .project-visual img{position:static;display:block;width:100%;height:100%;object-fit:contain;border-radius:24px}
+
+@media(min-width:761px){.about{align-items:stretch}.about .founder{aspect-ratio:auto}.about>div:last-child>:last-child{margin-bottom:0}}
+
+@media(min-width:1001px){
+  #about{grid-template-columns:.85fr 1.15fr;min-height:100svh;padding-block:32px;align-content:center;scroll-margin-top:0}
+  #about h2{font-size:clamp(24px,3.4vh,32px);line-height:1.15;margin-bottom:clamp(10px,1.8vh,18px)}
+  #about p{font-size:clamp(14px,1.8vh,17px);line-height:1.45;margin-bottom:clamp(8px,1.3vh,13px)}
+  #about h3{font-size:clamp(16px,2vh,19px);line-height:1.3;margin:clamp(10px,1.4vh,14px) 0 8px}
+  #about>div:last-child>:last-child{margin-bottom:0}
+}
